@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
+import ArrowRight from '@mui/icons-material/ArrowRight'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ChartBar as ChartBarIcon } from '../icons/chart-bar';
 import { Cog as CogIcon } from '../icons/cog';
@@ -124,22 +125,20 @@ export const DashboardSidebar = (props) => {
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Acme Inc
+                  Katarina Smith
                 </Typography>
                 <Typography
                   color="neutral.400"
                   variant="body2"
                 >
                   Your tier
-                  {' '}
-                  : Premium
+                  {''}
+                  : Silver
                 </Typography>
               </div>
-              <SelectorIcon
+              <ArrowRight
                 sx={{
                   color: 'neutral.500',
-                  width: 14,
-                  height: 14
                 }}
               />
             </Box>

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -46,17 +47,7 @@ export const DashboardNavbar = (props) => {
           >
             <MenuIcon fontSize="small" />
           </IconButton>
-          <Tooltip title="Search">
-            <IconButton sx={{ ml: 1 }}>
-              <SearchIcon fontSize="small" />
-            </IconButton>
-          </Tooltip>
           <Box sx={{ flexGrow: 1 }} />
-          <Tooltip title="Contacts">
-            <IconButton sx={{ ml: 1 }}>
-              <UsersIcon fontSize="small" />
-            </IconButton>
-          </Tooltip>
           <Tooltip title="Notifications">
             <IconButton sx={{ ml: 1 }}>
               <Badge
@@ -68,16 +59,23 @@ export const DashboardNavbar = (props) => {
               </Badge>
             </IconButton>
           </Tooltip>
-          <Avatar
-            sx={{
-              height: 40,
-              width: 40,
-              ml: 1
-            }}
-            src="/static/images/avatars/avatar_1.png"
+          <NextLink
+            href="/account"
+            passHref
           >
-            <UserCircleIcon fontSize="small" />
-          </Avatar>
+            <a>
+              <Avatar
+                sx={{
+                  height: 40,
+                  width: 40,
+                  ml: 1
+                }}
+                src="/static/images/avatars/avatar_6.png"
+              >
+                <UserCircleIcon fontSize="small" />
+              </Avatar>
+            </a>
+          </NextLink>
         </Toolbar>
       </DashboardNavbarRoot>
     </>
