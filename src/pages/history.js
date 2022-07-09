@@ -4,37 +4,12 @@ import { products } from '../__mocks__/products';
 import { ProductListToolbar } from '../components/product/product-list-toolbar';
 import { ProductCard } from '../components/product/product-card';
 import { DashboardLayout } from '../components/dashboard-layout';
-import { useEffect, useState } from 'react';
 
-const Products = () => {
-  const [filterBy, setFilterBy] = useState('')
-
-  const changeFilter = (e) => {
-    console.log(e.target.value)
-    setFilterBy(e.target.value)
-  }
-
-
-
-  const filter = (products) => {
-    if (filterBy === ''){
-      return products
-    }
-    else{
-      return(products.filter(product => {
-        return (product.name.toLowerCase().includes(filterBy))
-      }))
-    }
-  }
-
-  useEffect(() => {
-  },[filterBy])
-
-  return(
+const Products = () => (
   <>
     <Head>
       <title>
-        Inventory | Material Kit
+        Products | Material Kit
       </title>
     </Head>
     <Box
@@ -45,13 +20,13 @@ const Products = () => {
       }}
     >
       <Container maxWidth={false}>
-        <ProductListToolbar changeFilter={changeFilter}/>
+        <ProductListToolbar />
         <Box sx={{ pt: 3 }}>
           <Grid
             container
             spacing={3}
           >
-            {filter(products).map((product) => (
+            {products.map((product) => (
               <Grid
                 item
                 key={product.id}
@@ -80,7 +55,7 @@ const Products = () => {
       </Container>
     </Box>
   </>
-)};
+);
 
 Products.getLayout = (page) => (
   <DashboardLayout>

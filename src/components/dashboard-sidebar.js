@@ -13,6 +13,7 @@ import { User as UserIcon } from '../icons/user';
 import { UserAdd as UserAddIcon } from '../icons/user-add';
 import { Users as UsersIcon } from '../icons/users';
 import { XCircle as XCircleIcon } from '../icons/x-circle';
+import HistoryIcon from '@mui/icons-material/History';
 import { Logo } from './logo';
 import { NavItem } from './nav-item';
 
@@ -30,7 +31,12 @@ const items = [
   {
     href: '/products',
     icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Products'
+    title: 'Inventory'
+  },
+  {
+    href: '/history',
+    icon: (<HistoryIcon fontSize="small" />),
+    title: 'History'
   },
   {
     href: '/account',
