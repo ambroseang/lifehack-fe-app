@@ -28,7 +28,7 @@ export const products = [
     createdAt: '10/04/2022',
     expiryDate:'15/12/2022',
     name: 'Butter',
-    quantity:null,
+    quantity:1,
     opened:true,
     openedDate:'01/06/2022',
     grams:100,
