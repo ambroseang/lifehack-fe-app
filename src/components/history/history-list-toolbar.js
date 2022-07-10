@@ -12,11 +12,7 @@ import { Download as DownloadIcon } from '../../icons/download';
 import { Search as SearchIcon } from '../../icons/search';
 import { Upload as UploadIcon } from '../../icons/upload';
 
-
-
-export const ProductListToolbar = (props) => {
-
-return(
+export const ProductListToolbar = (props) => (
   <Box {...props}>
     <Box
       sx={{
@@ -31,15 +27,26 @@ return(
         sx={{ m: 1 }}
         variant="h4"
       >
-        Inventory
+        Products
       </Typography>
       <Box sx={{ m: 1 }}>
-
+        <Button
+          startIcon={(<UploadIcon fontSize="small" />)}
+          sx={{ mr: 1 }}
+        >
+          Import
+        </Button>
+        <Button
+          startIcon={(<DownloadIcon fontSize="small" />)}
+          sx={{ mr: 1 }}
+        >
+          Export
+        </Button>
         <Button
           color="primary"
           variant="contained"
         >
-          Add receipt(s)
+          Add products
         </Button>
       </Box>
     </Box>
@@ -63,11 +70,10 @@ return(
               }}
               placeholder="Search product"
               variant="outlined"
-              onChange={props.changeFilter}
             />
           </Box>
         </CardContent>
       </Card>
     </Box>
   </Box>
-)};
+);
