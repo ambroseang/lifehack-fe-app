@@ -23,76 +23,76 @@ const orders = [
     ref: 'CDD1049',
     amount: 30.5,
     customer: {
-      name: 'Ekaterina Tankova'
+      name: 'Fish'
     },
     createdAt: 1555016400000,
-    status: 'pending'
+    status: 'expiring'
   },
   {
     id: uuid(),
     ref: 'CDD1048',
     amount: 25.1,
     customer: {
-      name: 'Cao Yu'
+      name: 'Eggs'
     },
     createdAt: 1555016400000,
-    status: 'delivered'
+    status: 'expiring'
   },
   {
     id: uuid(),
     ref: 'CDD1047',
     amount: 10.99,
     customer: {
-      name: 'Alexa Richardson'
+      name: 'Yoghurt'
     },
     createdAt: 1554930000000,
-    status: 'refunded'
+    status: 'expiring'
   },
   {
     id: uuid(),
     ref: 'CDD1046',
     amount: 96.43,
     customer: {
-      name: 'Anje Keizer'
+      name: 'Rice'
     },
     createdAt: 1554757200000,
-    status: 'pending'
+    status: 'expiring'
   },
   {
     id: uuid(),
     ref: 'CDD1045',
     amount: 32.54,
     customer: {
-      name: 'Clarke Gillebert'
+      name: 'Beef'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'expired'
   },
   {
     id: uuid(),
     ref: 'CDD1044',
     amount: 16.76,
     customer: {
-      name: 'Adam Denisov'
+      name: 'Pasta'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'expired'
   }
 ];
 
-export const LatestOrders = (props) => (
+export const ExpiringItems = (props) => (
   <Card {...props}>
-    <CardHeader title="Latest Orders" />
+    <CardHeader title="Items List" />
     <PerfectScrollbar>
-      <Box sx={{ minWidth: 800 }}>
+      <Box>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell>
-                Order Ref
+                Receipt Ref
               </TableCell>
               <TableCell>
-                Customer
+                Item
               </TableCell>
               <TableCell sortDirection="desc">
                 <Tooltip
@@ -103,7 +103,7 @@ export const LatestOrders = (props) => (
                     active
                     direction="desc"
                   >
-                    Date
+                    Expiry Date
                   </TableSortLabel>
                 </Tooltip>
               </TableCell>
@@ -129,8 +129,8 @@ export const LatestOrders = (props) => (
                 </TableCell>
                 <TableCell>
                   <SeverityPill
-                    color={(order.status === 'delivered' && 'success')
-                    || (order.status === 'refunded' && 'error')
+                    color={(order.status === 'fresh' && 'success')
+                    || (order.status === 'expired' && 'error')
                     || 'warning'}
                   >
                     {order.status}
