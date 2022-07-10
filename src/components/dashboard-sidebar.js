@@ -6,6 +6,7 @@ import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/ma
 import ArrowRight from '@mui/icons-material/ArrowRight'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Kitchen from '@mui/icons-material/Kitchen';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { ChartBar as ChartBarIcon } from '../icons/chart-bar';
 import { Cog as CogIcon } from '../icons/cog';
 import { Lock as LockIcon } from '../icons/lock';
@@ -25,6 +26,11 @@ const items = [
     title: 'Statistics'
   },
   {
+    href: '/shopping-cart',
+    icon: (<ShoppingCart fontSize="small" />),
+    title: 'Shopping List'
+  },
+  {
     href: '/products',
     icon: (<Kitchen fontSize="small" />),
     title: 'Fridge'
@@ -34,11 +40,9 @@ const items = [
     icon: (<HistoryIcon fontSize="small" />),
     title: 'History'
   },
-  {
-    href: '/account',
-    icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
-  },
+];
+
+const accountItems = [
   {
     href: '/settings',
     icon: (<CogIcon fontSize="small" />),
@@ -47,18 +51,8 @@ const items = [
   {
     href: '/login',
     icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
+    title: 'Logout'
   },
-  {
-    href: '/register',
-    icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: (<XCircleIcon fontSize="small" />),
-    title: 'Error'
-  }
 ];
 
 export const DashboardSidebar = (props) => {
@@ -158,6 +152,24 @@ export const DashboardSidebar = (props) => {
         />
         <Box sx={{ flexGrow: 1 }}>
           {items.map((item) => (
+            <NavItem
+              key={item.title}
+              icon={item.icon}
+              href={item.href}
+              title={item.title}
+            />
+          ))}
+        </Box>
+
+        <Divider
+          sx={{
+            borderColor: '#2D3748',
+            my: 3
+          }}
+        />
+
+        <Box sx={{ flexGrow: 1 }}>
+          {accountItems.map((item) => (
             <NavItem
               key={item.title}
               icon={item.icon}

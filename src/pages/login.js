@@ -12,7 +12,7 @@ const Login = () => {
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
+      email: 'demo@lifehack.io',
       password: 'Password123'
     },
     validationSchema: Yup.object({
@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Login | Material Kit</title>
+        <title>Login</title>
       </Head>
       <Box
         component="main"
@@ -49,17 +49,6 @@ const Login = () => {
         }}
       >
         <Container maxWidth="sm">
-          <NextLink
-            href="/"
-            passHref
-          >
-            <Button
-              component="a"
-              startIcon={<ArrowBackIcon fontSize="small" />}
-            >
-              Dashboard
-            </Button>
-          </NextLink>
           <form onSubmit={formik.handleSubmit}>
             <Box sx={{ my: 3 }}>
               <Typography
