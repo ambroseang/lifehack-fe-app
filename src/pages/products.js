@@ -34,7 +34,7 @@ const Products = () => {
   <>
     <Head>
       <title>
-        Inventory | Material Kit
+        Fridge
       </title>
     </Head>
     <Box

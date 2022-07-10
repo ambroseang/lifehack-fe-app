@@ -31,7 +31,7 @@ return(
         sx={{ m: 1 }}
         variant="h4"
       >
-        Inventory
+        Fridge
       </Typography>
       <Box sx={{ m: 1 }}>
 

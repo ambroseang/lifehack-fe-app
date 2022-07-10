@@ -28,7 +28,7 @@ const ShoppingCart = () => {
     <>
       <Head>
         <title>
-          Shopping Cart
+          Shopping List
         </title>
       </Head>
       <Box
@@ -43,7 +43,7 @@ const ShoppingCart = () => {
             sx={{ mb: 3 }}
             variant="h4"
           >
-            Shopping Cart
+            Shopping List
           </Typography>
           <Grid
             container
