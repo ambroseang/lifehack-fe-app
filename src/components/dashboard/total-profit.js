@@ -22,7 +22,7 @@ export const TotalProfit = (props) => (
             color="textPrimary"
             variant="h4"
           >
-            $23k
+            $23
           </Typography>
           <Box
             sx={{
