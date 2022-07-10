@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { Bell as BellIcon } from '../icons/bell';
 import { UserCircle as UserCircleIcon } from '../icons/user-circle';
 import { Users as UsersIcon } from '../icons/users';
@@ -48,6 +48,18 @@ export const DashboardNavbar = (props) => {
             <MenuIcon fontSize="small" />
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
+          <Tooltip title="Shopping Cart">
+            <NextLink
+              href="/shopping-cart"
+              passHref
+            >
+              <a>
+                <IconButton sx={{ ml: 1 }}>
+                  <ShoppingCart fontSize="small" />
+                </IconButton>
+              </a>
+            </NextLink>
+          </Tooltip>
           <Tooltip title="Notifications">
             <IconButton sx={{ ml: 1 }}>
               <Badge
