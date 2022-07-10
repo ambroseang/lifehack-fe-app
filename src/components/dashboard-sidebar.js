@@ -25,11 +25,6 @@ const items = [
     title: 'Statistics'
   },
   {
-    href: '/customers',
-    icon: (<UsersIcon fontSize="small" />),
-    title: 'Customers'
-  },
-  {
     href: '/products',
     icon: (<Kitchen fontSize="small" />),
     title: 'Fridge'
@@ -88,6 +83,10 @@ export const DashboardSidebar = (props) => {
     [router.asPath]
   );
 
+  const handlePushToAccount = () => {
+    router.push("/account")
+  }
+
   const content = (
     <>
       <Box
@@ -125,10 +124,11 @@ export const DashboardSidebar = (props) => {
                 py: '11px',
                 borderRadius: 1
               }}
+              onClick={() => handlePushToAccount()}
             >
               <div>
                 <Typography
-                  color="inherit"
+                  // color="inherit"
                   variant="subtitle1"
                 >
                   Katarina Smith
