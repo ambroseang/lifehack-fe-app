@@ -6,7 +6,7 @@ import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import DateRangeIcon from '@mui/icons-material/DateRange';
-import "@fontsource/poppins";
+// import "@fontsource/poppins";
 import { Collapse } from '@mui/material';
 import { useEffect, useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -45,7 +45,6 @@ function handleOnClick() {
       >
       </Box>
       <Typography
-        fontFamily="Poppins"
         align="center"
         color="textPrimary"
         gutterBottom
