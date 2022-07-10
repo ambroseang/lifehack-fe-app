@@ -1,7 +1,7 @@
 import {
   Avatar,
   Box,
-  Button,
+  LinearProgress,
   Card,
   CardActions,
   CardContent,
@@ -11,11 +11,8 @@ import {
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
-  country: 'USA',
-  jobTitle: 'Senior Developer',
   name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  memberTier: 'Silver'
 };
 
 export const AccountProfile = (props) => (
@@ -47,25 +44,44 @@ export const AccountProfile = (props) => (
           color="textSecondary"
           variant="body2"
         >
-          {`${user.city} ${user.country}`}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {user.timezone}
+          {user.memberTier} Tier
         </Typography>
       </Box>
     </CardContent>
     <Divider />
     <CardActions>
-      <Button
-        color="primary"
-        fullWidth
-        variant="text"
+      <Box
+        sx={{
+          width: '100%',
+          p: 2,
+          display: 'flex',
+          alignItems: 'center',
+        }}
       >
-        Upload picture
-      </Button>
+          <Typography
+            sx={{ mr: 2 }}
+            color="silver"
+            variant="h6"
+          >
+            Silver
+          </Typography>
+
+        <Box sx={{ width: '100%', mr: 1 }}>
+          <LinearProgress
+            variant="determinate"
+            value={50}
+            color="success"
+          />
+        </Box>
+
+        <Typography
+          sx={{ mr: 2 }}
+          color="gold"
+          variant="h6"
+        >
+          Gold
+        </Typography>
+      </Box>
     </CardActions>
   </Card>
 );
